@@ -18,7 +18,7 @@ public class BibliotecaService {
 
     private AutorDAO autorDAO = new AutorDAO();
     private LibroDAO libroDAO = new LibroDAO();
-
+     
     public List<Autor> listarAutores() {
         return autorDAO.obtenerTodos();
     }
@@ -49,5 +49,29 @@ public class BibliotecaService {
         }
         libroDAO.eliminar(idLibro);
     }
+    
+    
+    public void guardarLibro(int id, String titulo, String autor, int anio) throws Exception {
+        if (titulo == null || titulo.isEmpty()) {
+            throw new Exception("El título no puede estar vacío");
+        }
+        if (autor == null || autor.isEmpty()) {
+            throw new Exception("El autor no puede estar vacío");
+        }
+        if (anio <= 0) {
+            throw new Exception("El año debe ser mayor a 0");
+        }
+    }
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 

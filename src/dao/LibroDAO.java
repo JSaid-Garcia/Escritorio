@@ -105,5 +105,33 @@ public class LibroDAO {
             e.printStackTrace();
         }
     }
+    
+    public void guardarLibro(String titulo, String autor, int anio) {
+    String sql = "INSERT INTO Libro (titulo, autor, anio) VALUES (?, ?, ?)";
+    try (Connection conn = ConexionBD.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+
+        ps.setString(1, titulo);
+        ps.setString(2, autor);
+        ps.setInt(3, anio);
+
+        ps.executeUpdate();
+        System.out.println("✅ Libro guardado correctamente!");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
