@@ -59,11 +59,11 @@ public class Libro {
         return genero;
     }
 
-    public void setAno(int ano) {
+    public void setAnno(int anno) {
         this.anno = anno;
     }
 
-    public int getAno() {
+    public int getAnno() {
         return anno;
     }
 
